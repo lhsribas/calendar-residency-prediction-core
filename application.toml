@@ -1,0 +1,4 @@
+server="root:root@localhost"
+database="residency_db"
+srvport=":3005"
+version="1"
