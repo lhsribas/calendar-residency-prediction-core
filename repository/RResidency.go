@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"github.com/lhsribas/calendar-residency-prediction-core/model"
+	"github.com/lhsribas/residency-prediction-backend/model"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 )

@@ -5,8 +5,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/lhsribas/calendar-residency-prediction-core/model"
-	"github.com/lhsribas/calendar-residency-prediction-core/repository"
+	"github.com/lhsribas/residency-prediction-backend/model"
+	"github.com/lhsribas/residency-prediction-backend/repository"
 )
 
 var s = repository.SResidency{}

@@ -3,7 +3,7 @@ package repository
 import (
 	"time"
 
-	"github.com/lhsribas/calendar-residency-prediction-core/model"
+	"github.com/lhsribas/residency-prediction-backend/model"
 	"gopkg.in/mgo.v2/bson"
 )
 

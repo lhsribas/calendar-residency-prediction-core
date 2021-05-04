@@ -6,9 +6,9 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/lhsribas/calendar-residency-prediction-core/configuration"
-	"github.com/lhsribas/calendar-residency-prediction-core/controller"
-	"github.com/lhsribas/calendar-residency-prediction-core/repository"
+	"github.com/lhsribas/residency-prediction-backend/configuration"
+	"github.com/lhsribas/residency-prediction-backend/controller"
+	"github.com/lhsribas/residency-prediction-backend/repository"
 )
 
 var s = repository.SResidency{}
