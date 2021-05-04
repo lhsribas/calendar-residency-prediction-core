@@ -65,17 +65,17 @@ func SaveResidency(w http.ResponseWriter, r *http.Request) {
 	respondWithJSON(w, http.StatusOK, map[string]string{"id": Id.Hex()})
 }
 
-func SaveMemberTeam(w http.ResponseWriter, r *http.Request) {
+func SaveStaffMamber(w http.ResponseWriter, r *http.Request) {
 	defer r.Body.Close()
 
-	var member model.MemberTeam
+	var member model.StaffMember
 
 	if err := json.NewDecoder(r.Body).Decode(&member); err != nil {
 		respondWithERROR(w, http.StatusBadRequest, "Invalid request payload.")
 		return
 	}
 
-	Id, err := s.SaveMemberTeam(member, "root")
+	Id, err := s.SaveStaffMember(member, "root")
 
 	if err != nil {
 		respondWithERROR(w, http.StatusInternalServerError, err.Error())

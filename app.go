@@ -29,6 +29,8 @@ func init() {
 	// load database consiguration
 	s.Server = c.Server
 	s.Database = c.Database
+
+	// Creates the connection with the database
 	s.Connect()
 
 	//Create indexes of a collection
@@ -66,7 +68,7 @@ func addRouter(router *mux.Router) {
 	subRouter := router.PathPrefix("/api/v" + version).Subrouter()
 	subRouter.HandleFunc("/residency", controller.SaveResidency).Methods("POST")
 	subRouter.HandleFunc("/customer", controller.SaveCustomer).Methods("POST")
-	subRouter.HandleFunc("/memberTeam", controller.SaveMemberTeam).Methods("POST")
+	subRouter.HandleFunc("/staffMember", controller.SaveStaffMamber).Methods("POST")
 	subRouter.HandleFunc("/note", controller.SaveResidencyNotes).Methods("POST")
 }
 

@@ -15,7 +15,7 @@ type SResidency struct {
 var rConn = RConn{}
 
 var rCustomer = RCustomer{}
-var rMemberTeam = RMemberTeam{}
+var rStaffMember = RStaffMember{}
 var rNote = RNote{}
 var rResindecy = RResindecy{}
 var rTrack = RTrack{}
@@ -64,17 +64,17 @@ func (s *SResidency) FindResidencyBySalesKey(salesKey string) (model.Residency, 
 
 // Member Team
 
-func (s *SResidency) SaveMemberTeam(m model.MemberTeam, userSystem string) (bson.ObjectId, error) {
+func (s *SResidency) SaveStaffMember(m model.StaffMember, userSystem string) (bson.ObjectId, error) {
 	m.ID = bson.NewObjectId()
 
 	// creates a track this method
 	createTrack(m.ID.Hex(), userSystem)
 
-	return m.ID, rMemberTeam.saveMT(m)
+	return m.ID, rStaffMember.saveSM(m)
 }
 
-func (S *SResidency) FindMembersTeamByResidencyId(Id string) ([]model.MemberTeam, error) {
-	return rMemberTeam.findByKeyMT(Id)
+func (S *SResidency) FindStaffMembersByResidencyId(Id string) ([]model.StaffMember, error) {
+	return rStaffMember.findByKeySM(Id)
 }
 
 // Note

@@ -5,18 +5,18 @@ import (
 	"gopkg.in/mgo.v2/bson"
 )
 
-type RMemberTeam struct{}
+type RStaffMember struct{}
 
 const (
-	MemberTeamCOLL = "member_team"
+	MemberTeamCOLL = "staff_member"
 )
 
-func (r *RMemberTeam) saveMT(m model.MemberTeam) error {
+func (r *RStaffMember) saveSM(m model.StaffMember) error {
 	return db.C(TrackCOLL).Insert(&m)
 }
 
-func (r *RMemberTeam) findByKeyMT(Id string) ([]model.MemberTeam, error) {
-	var m []model.MemberTeam
+func (r *RStaffMember) findByKeySM(Id string) ([]model.StaffMember, error) {
+	var m []model.StaffMember
 
 	err := db.C(MemberTeamCOLL).Find(bson.M{"residencyId": Id}).All(&m)
 	return m, err
